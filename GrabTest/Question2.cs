@@ -3,9 +3,9 @@ using System.Linq;
 
 namespace ConsoleApp2
 {
-	public class Class1
+	public class Question2
 	{
-		public int solution(int[] A)
+		public int Solution(int[] A)
 		{
 			int days = 30;
 			int oneDayTicket = 2;
