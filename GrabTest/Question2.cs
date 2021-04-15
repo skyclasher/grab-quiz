@@ -36,35 +36,51 @@ namespace ConsoleApp2
 					if (minDate > maxDate)
 						break;
 
-					int next7Days = minDate + 6;
-
-					int nearest = A.OrderBy(x => Math.Abs((long)x - next7Days)).First();
-
-					int nearIndex = Array.FindIndex(A, x => x == nearest);
-					int nextIndex = nearIndex + 1;
 					int nextDate = 31;
-
-					if (nextIndex < A.Length)
-					{
-						nextDate = A[nextIndex];
-						i = nearIndex;
-					}
+					int next7Days = minDate + 6;
+					int nearest = A.OrderBy(x => Math.Abs((long)x - next7Days)).First();
 
 					int dayDiff = nearest - minDate;
 
 					if (dayDiff >= 3)
 					{
 						cost += sevenDayTicket;
+
+						int nearIndex = Array.FindIndex(A, x => x == nearest);
+						int nextIndex = nearIndex + 1;
+
+						if (nextIndex < A.Length)
+						{
+							nextDate = A[nextIndex];
+							i = nearIndex;
+						}
 					}
 					else
 					{
 						cost += oneDayTicket;
+
+						int minIndex = Array.FindIndex(A, x => x == minDate);
+						nextDate = GetNextDate(A, minIndex);
 					}
 					minDate = nextDate;
 				}
 
 			}
 			return cost;
+		}
+
+		public int GetNextDate(int[] date, int index)
+		{
+			if ((index > date.Length - 1) || (index < 0))
+				throw new Exception("Invalid index");
+
+			else if (index == date.Length - 1)
+				index = 0;
+
+			else
+				index++;
+
+			return date[index];
 		}
 	}
 
