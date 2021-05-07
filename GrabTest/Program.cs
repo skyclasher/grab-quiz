@@ -23,6 +23,28 @@ namespace ConsoleApp2
 
 
 			Console.WriteLine(question2.Solution(array));
+
+
+			// Given a string of '(',')', write a function to validate a string based on these rules:
+			// 
+			// 1. Any opening brackets '(' must have a corresponding closing brackets ')'.
+			// 2. Any closing brackets ')' must have a corresponding opening brackets '('.
+			// 3. Opening brackets '(' must go before the closing brackets ')'.
+			//
+			Question3 question3 = new Question3();
+
+
+			string bracket = "(()(()()))";   // True
+											 //string bracket = "((())())";     // True
+											 //string bracket = "(())";         // True
+											 //string bracket = "()((()))()()"; // True
+											 //string bracket = "(()";          // False
+											 //string bracket = "()((()))())";  // False
+											 //string bracket = ")";            // False
+
+			Console.WriteLine(question3.Solution(bracket));
+			Console.ReadLine();
+
 			Console.ReadLine();
 
 

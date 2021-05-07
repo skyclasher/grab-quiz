@@ -1,0 +1,107 @@
+﻿<style>
+    .service-item--active {
+        background-color: #eee;
+    }
+
+    /* You do not have to be concerned with the styles below. */
+
+    body {
+        font-family: -apple-system,system-ui,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif;
+        padding: 40px;
+    }
+
+    .services {
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        list-style: none;
+        padding-left: 0;
+        width: 320px;
+    }
+
+    .service-item {
+        padding: 10px 20px;
+    }
+
+        .service-item:not(:last-child) {
+            border-bottom: 1px solid #ccc;
+        }
+
+        .service-item a {
+            color: #00ba51;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+    .price {
+        float: right;
+        font-size: 24px;
+        height: 100px;
+        padding-left: 24px;
+    }
+</style>
+
+<h2>Accordion Spec</h2>
+<a target="_blank" href="https://imgur.com/a/0cwsI">Click Here to See Demo</a>
+
+<h2>Implementation</h2>
+
+<ul class="services">
+    <li class="service-item">
+        <a href="#">JustGrab</a>
+        <div class="toggle">
+            <span class="price">$12</span>
+            <p>JustGrab automatically assigns the nearest vehicle, either a taxi or car, to you at an upfront fixed fare rate.</p>
+        </div>
+    </li>
+    <li class="service-item">
+        <a href="#">GrabShare</a>
+        <div class="toggle">
+            <span class="price">$9.50</span>
+            <p>GrabShare allows you to carpool in a car or taxi with another party headed in the same direction.</p>
+        </div>
+    </li>
+    <li class="service-item">
+        <a href="#">GrabCar</a>
+        <div class="toggle">
+            <span class="price">$14</span>
+            <p>Chauffeured cars for your every need. Know your exact fare even before you book.</p>
+        </div>
+    </li>
+</ul>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+  // Add functionality to make the markup above into an accordion component.
+  // You may use jQuery if you like.
+
+
+  // Add your code here
+  // Your code here.
+
+    $(document).ready(function () {
+
+		$(this).find('li > div.toggle').slideUp(350);
+
+		$('.service-item').click(function (event) {
+            event.preventDefault();
+
+            let $this = $(this);
+
+
+            if ($this.find('.toggle').hasClass('show')) {
+              $this.find('.toggle').removeClass('show');
+              $this.find('.toggle').slideUp(350);
+
+            } else {
+			  $this.parent().find('li > div.toggle').removeClass('show');
+			  $this.parent().find('li > div.toggle').slideUp(350);
+			  $this.find('.toggle').toggleClass('show');
+			  $this.find('.toggle').slideToggle(350);
+            }
+
+        });
+     });
+
+
+
+</script>
