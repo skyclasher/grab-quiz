@@ -43,11 +43,12 @@ namespace ConsoleApp2
 											 //string bracket = ")";            // False
 
 			Console.WriteLine(question3.Solution(bracket));
-			Console.ReadLine();
+
+			//Revers array
+			Question5 question5 = new Question5();
+			question5.Solution();
 
 			Console.ReadLine();
-
-
 
 
 		}

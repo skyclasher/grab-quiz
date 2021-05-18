@@ -67,10 +67,8 @@ namespace ConsoleApp2
 				}
 			}
 
-
 			Console.WriteLine(output);
 			return output;
-
 		}
 
 		public static Stack<char> Reverse(Stack<char> stack)
